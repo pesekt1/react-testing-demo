@@ -1,7 +1,7 @@
-import Onboarding from "../components/Onboarding";
+import Greet from "../components/Greet";
 
 const PlaygroundPage = () => {
-  return <Onboarding />;
+  return <Greet name="Tomas" />;
 };
 
 export default PlaygroundPage;
