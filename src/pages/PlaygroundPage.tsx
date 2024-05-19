@@ -1,7 +1,7 @@
-import Greet from "../components/Greet";
+import TermsAndConditions from "../components/TermsAndConditions";
 
 const PlaygroundPage = () => {
-  return <Greet name="Tomas" />;
+  return <TermsAndConditions />;
 };
 
 export default PlaygroundPage;
