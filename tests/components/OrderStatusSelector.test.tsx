@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import OrderStatusSelector from "../../src/components/OrderStatusSelector";
 import { Theme } from "@radix-ui/themes";
 import userEvent from "@testing-library/user-event";
-import { get } from "http";
 
 describe("OrderStatusSelector", () => {
   const renderOrderStatusSelector = () => {
@@ -22,7 +21,7 @@ describe("OrderStatusSelector", () => {
     return { button, getStatuses, getOption, onChange };
   };
 
-  it("should render New as the default value", async () => {
+  it("should render New as the default value", () => {
     const { button } = renderOrderStatusSelector();
 
     expect(button).toHaveTextContent("New");
