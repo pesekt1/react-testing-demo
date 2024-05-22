@@ -3,8 +3,22 @@ import { server } from "../../src/mocks/server";
 import { http, HttpResponse } from "msw";
 
 import ProductList from "../../src/components/ProductList";
+import { db } from "../../src/mocks/db";
 
 describe("ProductList", () => {
+  const productsIds: number[] = [];
+
+  beforeAll(() => {
+    [1, 2, 3].forEach(() => {
+      const product = db.product.create();
+      productsIds.push(product.id);
+    });
+  });
+
+  afterAll(() => {
+    db.product.deleteMany({ where: { id: { in: productsIds } } });
+  });
+
   it("should render a list of products", async () => {
     render(<ProductList />);
     const products = await screen.findAllByRole("listitem");
