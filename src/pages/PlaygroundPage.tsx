@@ -1,7 +1,7 @@
-import TermsAndConditions from "../components/TermsAndConditions";
+import ProductList from "../components/ProductList";
 
 const PlaygroundPage = () => {
-  return <TermsAndConditions />;
+  return <ProductList />;
 };
 
 export default PlaygroundPage;
